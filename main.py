@@ -48,7 +48,7 @@ if ws is None:
 ws.title = "Leaderboard"
 ws.append(["Позиция", "Имя", "Очки"])
 for entry in sorted_data:
-    ws.append([entry["pos"], entry["name"], entry["points"]])
+    ws.append([int(entry["pos"]), entry["name"], int(entry["points"])])
 
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 excel_file_path = f"leaderboard_{timestamp}.xlsx"
